@@ -1,5 +1,5 @@
 # SE---SEM-3-DSL-ASSIGNMENTS-
-SE - SEM 3 Data Structures
+SE - SEM 3 Data Structures Laboratory Assignments
 
 
 Assignemnt-7
