@@ -96,8 +96,8 @@ void evaluate(string postfix){
         else
         {
             int val1 = st.top_int();
-			st.pop();
-			int val2 = st.top_int();
+	    st.pop();
+	    int val2 = st.top_int();
             switch (postfix[i])
             {
             case '+': 
