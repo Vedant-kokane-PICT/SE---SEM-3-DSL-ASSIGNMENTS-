@@ -101,17 +101,17 @@ void evaluate(string postfix){
             switch (postfix[i])
             {
             case '+': 
-				st.push(val2 + val1);
-				break;
+		st.push(val2 + val1);
+		break;
             case '-':
-				st.push( val2 - val1);
-				break;
+		st.push( val2 - val1);
+		break;
             case '*':
-				st.push(val2 * val1); 
-				break;
+		st.push(val2 * val1); 
+		break;
             case '/': 
-				st.push(val2/val1);
-				break;
+		st.push(val2/val1);
+		break;
             }
         }
     }
