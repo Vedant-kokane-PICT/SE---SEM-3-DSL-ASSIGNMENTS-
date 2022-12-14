@@ -23,32 +23,26 @@ class Sort_percentage:
         return percentage
 
     # Function for Swaping
-    def swap(self,a,b):
-        temp = a
-        a = b
-        b = a
-        return a,b
+    def partition(self,array,low,high):
+        i = low
+        j = high - 1
+        pivot = array[high]
+        while i < j:
+            while i < high and array[i] < pivot:
+                i = i + 1
+            while j > low and array[j] >= pivot:
+                j = j - 1
+            if i < j:
+                temp = array[i]
+                array[i] = array[j]
+                array[j] =  temp
+        
+        if array[i] > pivot:
+            temp = array[i]
+            array[i] = array[high]
+            array[high] =  temp
 
-    # Function for making Partition
-    def partition(self,a,low,high):
-        pivot = a[low]
-        start = low
-        end = high
-        while(start < end):
-            while(a[start] <= pivot):
-                start = start + 1
-            while(a[end] > pivot):
-                end = end - 1
-            if(start < end):
-                temp = a[start]
-                a[start] = a[end]
-                a[end] = temp
-            
-        temp = a[low]
-        a[low] = a[end]
-        a[end] = temp
-
-        return end
+        return i
 
     # Function for Quick Sort
     def quick_sort(self,array,low,high):
