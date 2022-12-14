@@ -12,9 +12,8 @@ format. 3. Only '+', '-', '*' and '/ ' operators are expected.
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include <iostream>
-using namespace std;
-
+// 21415 - Vedant Kokane
+	
 #include <iostream>
 #include <string.h>
 using namespace std;
