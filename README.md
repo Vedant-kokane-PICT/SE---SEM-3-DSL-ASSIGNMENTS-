@@ -1,6 +1,59 @@
 # SE---SEM-3-DSL-ASSIGNMENTS-
 SE - SEM 3 Data Structures Laboratory Assignments
 
+Assignemnt-1
+In second year computer engineering class, group A student’s
+play cricket, group B students play badminton and group C
+students play football.
+Write a Python program using functions to compute
+following: - a) List of students who play both cricket and
+badminton b) List of students who play either cricket or
+badminton but not both c) Number of students who play
+neither cricket nor badminton d) Number of students who
+play cricket and football but not badminton. (Note- While
+realizing the group, duplicate entries should be avoided, Do
+not use SET built-in functions)
+
+Assignemnt-2
+Write a Python program to compute following operations on String:
+a) To display word with the longest length
+b) To determines the frequency of occurrence of particular
+character in the string
+c) To check whether given string is palindrome or not
+d) To display index of first appearance of the substring
+e) To count the occurrences of each word in a given string
+(Do not use string built-in functions)
+
+Assignemnt-3
+Write a python program to compute following computation on matrix:
+a) Addition of two matrices
+b) Subtraction of two matrices
+c) Multiplication of two matrices
+d) Transpose of a matrix
+
+Assignemnt-4
+a) Write a Python program to store roll numbers of student in
+array who attended training program in random order. Write
+function for searching whether particular student attended
+training program or not, using Linear search and Sentinel
+search.
+b) Write a Python program to store roll numbers of student
+array who attended training program in sorted order. Write
+function for searching whether particular student attended
+training program or not, using Binary search and Fibonacci
+search.
+
+Assignemnt-5
+Write a python program to store second year percentage of
+students in array. Write function for sorting array of floating-
+point numbers in ascending order using a) Insertion sort
+b) Shell Sort and display top five scores
+
+Assignemnt-6
+Write a python program to store first year percentage of
+students in array. Write function for sorting array of floating
+point numbers in ascending order using quick sort and
+display top five scores.
 
 Assignemnt-7
 Write C++ program for storing binary number using doubly
