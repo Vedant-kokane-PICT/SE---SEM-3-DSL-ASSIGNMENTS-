@@ -69,7 +69,6 @@ public:
 	void one_complement(){
 		Node *temp = new Node();
 		temp = start;
-
 		while(temp != NULL){
 			if(temp->bit == 1){
 				temp->bit = 0;
@@ -82,8 +81,8 @@ public:
 	}
 
 	void two_complement(){
-
 		Node *temp = new Node();
+		one_complement();
 		temp = last;
 		while(temp->bit != 0){
 			temp->bit = 0;
@@ -156,28 +155,35 @@ public:
 };
 
 int main() {
-	List l,l1,l2;
+    List l,l1,l2;
+    char u;
 	cout<<"Enter a binary Number"<<endl;
 	l.input();
 	int c;
-	cout<<"1. One's Complement"<<endl;
+	while(u!='n'){
+    cout<<"1. One's Complement"<<endl;
 	cout<<"2. Two's Complement"<<endl;
 	cout<<"3. Add 2 binary Numbers"<<endl;
 	cin>>c;
 	if(c==1){
 		l.one_complement();
 		l.print();
+		l.one_complement();
 	}
 	else if(c==2){
-		l.one_complement();
 		l.two_complement();
 		l.print();
+		l.two_complement();
 	}
 	else if(c==3){
 		cout<<"Enter a binary Number"<<endl;
 		l1.input();
 		l2 = l+l1;
 		l2.print();
+	}
+	cout<<endl;
+	cout<<"Do you want to try again"<<endl;
+	cin>>u;
 	}
 
 	return 0;
