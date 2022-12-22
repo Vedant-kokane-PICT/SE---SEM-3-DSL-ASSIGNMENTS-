@@ -92,40 +92,38 @@ class Student:
 
 
     # Function for Fibonacci search
-    def fibonacci_search(self, student, key):
+    def fibonacci_search(self,a,n,key):
+        f = []
         first = 0
         second = 1
-        fibonaci = []
-        fibonaci.append(first)
-        fibonaci.append(second)
-        for i in range(self.n):
+        f.append(first)
+        f.append(second)
+        for i in range(1,20+1):
             third = first + second
-            fibonaci.append(third)
+            f.append(third)
             first = second
             second = third
-        n = self.n
-        m = 0
-        student.sort()
-        while fibonaci[m] < n:
-            m = m+1
-        off_set = -1
-        while fibonaci[m]>1:
-            mid = min(off_set + fibonaci[m-2],n-1)
-            if key > student[mid]:
-                m = m-1
-                off_set = mid
-            elif key < student[mid]:
-                m = m-2
-            else:
-                print("Roll no has attended the training program ")
-                return mid+1
-
-        if(key==student[n-1]):
-            print("Roll no has attended the training program ")
-
-        if not fibonaci[m-1] and student[off_set+1]==key:
-            return off_set + 1
-        return -1
+        k = 0
+        while(f[k]<=key):
+            k = k + 1
+        if f[k]==0 :
+            print("Not Present")
+            return -1
+        offset = -1
+        check = False
+        while (f[k]>1):
+            i = min(offset+f[k-2],n-1)
+            if key == a[i]:
+                check = True
+                print("Present")
+                return i
+            elif key > a[i]:
+                k = k - 1
+                offset = i
+            elif key< a[i]:
+                k = k - 2
+        if check==False:
+            print("Not Present")
 
 
 n = int(input('Enter the total no of students in who attended the training program : '))
@@ -149,7 +147,7 @@ while choice != "n":
     elif c==3:
         s.binary_search(studuent_rollno, key)
     elif c==4:
-        s.fibonacci_search(studuent_rollno, key)
+        s.fibonacci_search(studuent_rollno,n,key)
     else:
         print("You have entered wrong choice.")
 
