@@ -74,9 +74,9 @@ class String_Operation:
                 for j in range(n):
                     if string_a[i+j] != sub[j]:
                         break
-                if j+1 == n:
-                    print(i)
-                    break
+                    if j+1 == n:
+                        print(i)
+                        break
 
     def occurrence_of_word(self,string_a):
         duplicate = []
