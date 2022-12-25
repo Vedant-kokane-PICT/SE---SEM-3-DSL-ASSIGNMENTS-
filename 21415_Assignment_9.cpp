@@ -88,10 +88,10 @@ int main(){
     if(s1.empty()){
     	cout<<"Well parenthesized expression"<<endl;
 	}
-	else{
-		cout<<"Not a Well parenthesized expression"<<endl;
-	}
-	return 0;
+    else{
+	cout<<"Not a Well parenthesized expression"<<endl;
+    }
+    return 0;
 }
 
 // Example - (A+(B*C)
