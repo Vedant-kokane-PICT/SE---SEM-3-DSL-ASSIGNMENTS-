@@ -72,10 +72,12 @@ int main(){
     stack s1;
     string s;
     cout<<"Enter a expression"<<endl;
-	getline(cin,s);
+    getline(cin,s);
     for(int i=0;i<s.length();i++){
 	    if(s1.empty()){
-		s1.push(s[i]);
+		if(s[i] == '(' || s[i] == '{' || s[i] == '[' || s[i] == ')' || s[i] == '}' || s[i] == ']' ){
+			s1.push(s[i]);
+		}
 	    }
 	    else if((s1.top1() == '(' && s[i] == ')') || (s1.top1() == '{' && s[i] == '}') ||(s1.top1() == '[' && s[i] == ']')){
 		s1.pop();
