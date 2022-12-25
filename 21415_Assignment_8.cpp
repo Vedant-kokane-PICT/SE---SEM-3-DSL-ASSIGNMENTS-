@@ -195,30 +195,30 @@ public :
 
 	// for sorting using bubblesort which uses pointer manipulation
 	void bubbleSort(node** head, int total)
-{
-    node** h;
-    int i, j, swapped;
-    for (i = 0; i <= total; i++)
-    {
-        h = head;
-        swapped = 0;
-        for (j = 0; j < total - i - 1; j++)
-        {
-            node* p1 = *h;
-            node* p2 = p1->next_node;
-            if (p1->start > p2->start)
-            {
-                // update the link after swapping 
-                *h = swap(p1, p2);
-                swapped = 1;
-            }
-            h = &(*h)->next_node;
-        }
-        // break if the loop ended without any swap 
-        if (swapped == 0)
-            break;
-    }
-}
+	{
+	    node** h;
+	    int i, j, swapped;
+	    for (i = 0; i <= total; i++)
+	    {
+		h = head;
+		swapped = 0;
+		for (j = 0; j < total - i - 1; j++)
+		{
+		    node* p1 = *h;
+		    node* p2 = p1->next_node;
+		    if (p1->start > p2->start)
+		    {
+			// update the link after swapping 
+			*h = swap(p1, p2);
+			swapped = 1;
+		    }
+		    h = &(*h)->next_node;
+		}
+		// break if the loop ended without any swap 
+		if (swapped == 0)
+		    break;
+	    }
+	}
 
 
 
