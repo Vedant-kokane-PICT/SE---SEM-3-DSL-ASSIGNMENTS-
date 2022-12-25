@@ -63,6 +63,10 @@ public:
 			return 0;
 		}
 	}
+	
+	char top1(){
+	    return s[top];
+	}
 };
 
 int main() {
@@ -91,13 +95,19 @@ int main() {
 				s1.push(s[i]);
 				break;
 			case ')':
+			    if(s1.top1() == '('){
 				s1.pop();
+			    }
 				break;
 			case '}':
+				if(s1.top1() == '{'){
 				s1.pop();
+			    }
 				break;
 			case ']':
+				if(s1.top1() == ']'){
 				s1.pop();
+			    }
 				break;
 			}
 			i++;
@@ -115,4 +125,3 @@ int main() {
 
 // Example - (A+(B*C)
 // Example - (A+(B*C))
-
