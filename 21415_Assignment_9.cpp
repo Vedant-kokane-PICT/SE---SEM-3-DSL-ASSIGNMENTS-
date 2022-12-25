@@ -105,7 +105,7 @@ int main() {
 			    }
 				break;
 			case ']':
-				if(s1.top1() == ']'){
+				if(s1.top1() == '['){
 				s1.pop();
 			    }
 				break;
