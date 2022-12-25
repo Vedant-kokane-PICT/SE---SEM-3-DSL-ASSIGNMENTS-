@@ -19,103 +19,74 @@ using namespace std;
 
 #define m 10
 
-class Stack{
-private :
-	int top;
-	char s[m];
-
-public:
-	Stack(){
-		top = -1;
-	}
-	void push(char x){
-		if(top == m-1){
-			cout<<"Stack is full"<<endl;
-		}
-		else{
-			top++;
-			s[top] = x;
-		}
-	}
-
-	void pop(){
-		if(is_empty()){
-			cout<<"Stack is empty"<<endl;
-		}
-		else{
-			top--;
-		}
-	}
-	bool is_empty(){
-		if(top == -1){
-			return 1;
-		}
-		else{
-			return 0;
-		}
-	}
-
-	bool is_full(){
-		if(top == m-1){
-			return 1;
-		}
-		else{
-			return 0;
-		}
-	}
-	
-	char top1(){
-	    return s[top];
-	}
+class stack{
+  int top;  
+  char s[m];
+  public:
+  stack(){
+      top = -1;
+  }
+  
+  bool empty(){
+      if (top==-1){
+          return 1;
+      }
+      return 0;
+  }
+  
+  bool full(){
+      if(top == m- 1){
+          return 1;
+      }
+      return 0;
+  }
+  char top1(){
+      return s[top];
+  }
+  
+  void push(char x){
+      if(full()){
+          cout<<"Full"<<endl;
+          return;
+      }
+      else{
+          top++;
+          s[top] = x;
+      }
+  }
+  
+  void pop(){
+      if(empty()){
+          cout<<"Empty"<<endl;
+          return;
+      }
+      else{
+          top--;
+      }
+  }
 };
 
-int main() {
-	string s;
-	cout<<"Enter a expression"<<endl;
+
+
+int main(){
+    stack s1;
+    string s;
+    cout<<"Enter a expression"<<endl;
 	getline(cin,s);
-	int n = s.length();
-	Stack s1;
-	if(s[0]==')' || s[0]=='}' || s[0]==']'){
-		cout<<"Not a Well parenthesized expression"<<endl;
-		return 0;
-	}
-	else{
-		int i = 0;
-		while(i<n){
-			switch(s[i]){
-			case '(':
-				s1.push(s[i]);
-				break;
-
-			case '{':
-				s1.push(s[i]);
-				break;
-
-			case '[':
-				s1.push(s[i]);
-				break;
-			case ')':
-			    if(s1.top1() == '('){
-				s1.pop();
-			    }
-				break;
-			case '}':
-				if(s1.top1() == '{'){
-				s1.pop();
-			    }
-				break;
-			case ']':
-				if(s1.top1() == '['){
-				s1.pop();
-			    }
-				break;
-			}
-			i++;
-		}
-	}
-
-	if(s1.is_empty()){
-		cout<<"Well parenthesized expression"<<endl;
+    for(int i=0;i<s.length();i++){
+    if(s1.empty()){
+        s1.push(s[i]);
+    }
+    else if((s1.top1() == '(' && s[i] == ')') || (s1.top1() == '{' && s[i] == '}') ||(s1.top1() == '[' && s[i] == ']')){
+        s1.pop();
+    }
+    else if(s[i] == '(' || s[i] == '{' || s[i] == '['){
+        s1.push(s[i]);
+    }
+    }
+    
+    if(s1.empty()){
+    	cout<<"Well parenthesized expression"<<endl;
 	}
 	else{
 		cout<<"Not a Well parenthesized expression"<<endl;
