@@ -33,14 +33,15 @@ public:
 	void insert(string x){
 		if(rear == m-1){
 			cout<<"Queue is Full"<<endl;
+			return ;
 		}
 		else if(front == -1){
 			front = 0;
 		}
-		else{
-			rear++;
-			queue_array[rear] = x;
-		}
+		
+		rear++;
+		queue_array[rear] = x;
+		
 	}
 	bool is_empty(){
 		if(front==-1 && rear==-1){
