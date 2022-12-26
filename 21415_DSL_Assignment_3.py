@@ -43,8 +43,8 @@ class Matrix:
         for i in range(r):
             row = []
             for j in range(c):
-               sum = matrix_1[i][j] + matrix_2[i][j]
-               row.append(sum)
+                sum = matrix_1[i][j] + matrix_2[i][j]
+                row.append(sum)
             result.append(row)
         return result
 
@@ -66,7 +66,7 @@ class Matrix:
         mat = []
         r = self.length(matrix_1)
         c = self.length(matrix_1[0])
-        
+
         # to make a new matrix of [c] x [r] order
         for i in range(c):
             row = []
@@ -74,11 +74,11 @@ class Matrix:
                 v = 0
                 row.append(v)
             mat.append(row)
-        
-        
+
+
         for i in range(r):
             for j in range(c):
-                mat[j][i] = matrix_1[j][i]
+                mat[j][i] = matrix_1[i][j]
         return mat
 
     # Function for Multiplication of Matrix
@@ -157,4 +157,3 @@ while choice != "n":
 
     print("Do you want to try any other operation ? (y/n)")
     choice = input("")
-
