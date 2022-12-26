@@ -66,12 +66,19 @@ class Matrix:
         mat = []
         r = self.length(matrix_1)
         c = self.length(matrix_1[0])
-        for i in range(r):
+        
+        # to make a new matrix of [c] x [r] order
+        for i in range(c):
             row = []
-            for j in range(c):
-                r = matrix_1[j][i]
-                row.append(r)
+            for j in range(r):
+                v = 0
+                row.append(v)
             mat.append(row)
+        
+        
+        for i in range(r):
+            for j in range(c):
+                mat[j][i] = matrix_1[j][i]
         return mat
 
     # Function for Multiplication of Matrix
